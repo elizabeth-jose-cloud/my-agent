@@ -1,0 +1,2 @@
+Mon: Updated the login page.
+Tue: Fixed a bug.

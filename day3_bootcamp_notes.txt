@@ -1,0 +1,11 @@
+I have prepared your project safety checks and initiated the GitHub sign-in.
+
+Please complete the sign-in in your web browser:
+
+Open this link: https://github.com/login/device
+Sign in to GitHub if asked.
+Enter this one-time code:
+A679-8033
+Click Continue, then click Authorize.
+
+Once you complete this in your browser, I will automatically detect it and proceed with creating and uploading your repository.

@@ -1,0 +1,5 @@
+Mon: Feature X deployed.
+Tue: Waiting on security approval.
+Wed: Vendor delay may affect release.
+Thu: Client happy with demo.
+Fri: 
