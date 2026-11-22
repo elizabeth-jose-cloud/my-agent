@@ -32,7 +32,11 @@ SECTION_ICON = {
     "Next week": "📅",
 }
 
-SAMPLE_FILE = "sample_updates.txt"
+SAMPLES = {
+    "Banking portal (sample_updates.txt)": "sample_updates.txt",
+    "Cloud migration": "samples/cloud_migration.txt",
+    "Telecom billing": "samples/telecom_billing.txt",
+}
 
 
 def read_file(path: str) -> str:
@@ -43,8 +47,9 @@ def read_file(path: str) -> str:
         return ""
 
 
-def load_sample():
-    st.session_state.updates = read_file(SAMPLE_FILE)
+def load_selected_sample():
+    selected = st.session_state.get("sample_pick", list(SAMPLES.keys())[0])
+    st.session_state.updates = read_file(SAMPLES[selected])
 
 
 if "updates" not in st.session_state:
@@ -62,7 +67,8 @@ left_col, right_col = st.columns([1, 1.25], gap="large")
 
 with left_col:
     st.subheader("Team updates")
-    st.button("Load sample updates", on_click=load_sample, width="stretch", icon=":material/description:")
+    st.selectbox("Choose a sample input", list(SAMPLES.keys()), key="sample_pick")
+    st.button("Load sample updates", on_click=load_selected_sample, width="stretch", icon=":material/description:")
     updates = st.text_area(
         "Rough notes for the week",
         key="updates",
